@@ -11,6 +11,8 @@ Adding SPA mode to the tsconfig.json (per https://tanstack.com/start/latest/docs
 
 These workarounds may not be suitable for all projects.
 
+Wrapping the AddToList button in another ClientOnly component removes the hydration issue. This may raise another question about how and when components are determined to be client only.
+
 Questions:
 
 Why is there a hydration error when the component is wrapped within the ClientOnly tags, and the function called is wrapped within createClientOnlyFn ? I understand these should precvent the server trying to render the component, and avoid the hydration issues.
