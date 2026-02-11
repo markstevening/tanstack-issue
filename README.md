@@ -4,7 +4,7 @@ Component: AddToListButton /src/components/add-to-list-button.tsx
 
 Behaviour works as expected, but hydration errors are shown in the browser console. Removing the component from the index.tsx and restarting the dev server clears the error, though there seems to be inconsistent behaviour without restarting the dev server.
 
-Workarounds:
+## Workarounds
 
 Adding ssr: false to the route in \_\_root.tsx prevents this hydration error
 Adding SPA mode to the tsconfig.json (per https://tanstack.com/start/latest/docs/framework/react/guide/spa-mode ) orevents this error
@@ -13,7 +13,7 @@ These workarounds may not be suitable for all projects.
 
 Wrapping the AddToList button in another ClientOnly component removes the hydration issue. This may raise another question about how and when components are determined to be client only.
 
-Questions:
+## Questions:
 
 Why is there a hydration error when the component is wrapped within the ClientOnly tags, and the function called is wrapped within createClientOnlyFn ? I understand these should precvent the server trying to render the component, and avoid the hydration issues.
 
